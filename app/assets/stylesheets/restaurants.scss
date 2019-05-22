@@ -1,3 +1,30 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  text-align: center;
+}
+
+.outer-card {
+  margin: 10px;
+}
+
+.card {
+  display: inline-grid;
+  width: 350px;
+  height: 150px;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 4px 0 2px -4px rgba(0,0,0,0.4);
+  margin: 4px;
+  p {
+    margin: 0;
+  }
+}
+
+.details {
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+}

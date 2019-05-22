@@ -1,7 +1,19 @@
 <h1>All Restaurants</h1>
 
-<% @restaurants.each do |restaurant| %>
-  <p><%= link_to restaurant.name, restaurant_path(restaurant) %>, <%= restaurant.category.capitalize %></p>
-<% end %>
+<div class="outer-card">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card">
+<!--       <div>
+        <img src="https://source.unsplash.com/random/150x150">
+      </div> -->
+      <div>
+        <h5><strong><%= restaurant.name%></strong></h5>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.category.capitalize %></p>
+        <p><%= link_to "Show", restaurant_path(restaurant), class:"btn btn-outline-primary btn-sm rounded my-1" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to "Add a new Restaurant", new_restaurant_path, class:"btn btn-primary rounded" %>

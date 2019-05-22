@@ -1,16 +1,23 @@
-<h1><%= @restaurant.name %></h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1 class="py-2"><%= @restaurant.name %></h1>
+<hr>
 
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.phone_number %></p>
-<p><%= @restaurant.category.capitalize %></p>
+<div class="details">
+  <p>Located in: <%= @restaurant.address %></p>
+  <p>Phone no.: <%= @restaurant.phone_number %></p>
+  <p>Cuisine: <%= @restaurant.category.capitalize %></p>
+</div>
 
-<ul>
+<div class="outer-card">
   <% @restaurant.reviews.each do |review| %>
-    <li><p>Rating: <%= review.rating %>/5</p>
-    <p>Comment: <%= review.content %></p></li>
+    <div class="card">
+      <p><i class="fas fa-star"></i>: <%= review.rating %>/5</p>
+      <p><%= review.content %></p>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<%= link_to "Add new review", new_restaurant_review_path(@restaurant), class:"btn btn-primary btn-sm rounded" %>
 <%= link_to "Back to all restaurants", restaurants_path, class:"btn btn-primary btn-sm rounded" %>
+
+<hr>
+
+<h3>Add a review</h3>
