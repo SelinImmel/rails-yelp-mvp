@@ -1,0 +1,16 @@
+<h1><%= @restaurant.name %></h1>
+<p>Find me in app/views/restaurants/show.html.erb</p>
+
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category.capitalize %></p>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><p>Rating: <%= review.rating %>/5</p>
+    <p>Comment: <%= review.content %></p></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add new review", new_restaurant_review_path(@restaurant), class:"btn btn-primary btn-sm rounded" %>
+<%= link_to "Back to all restaurants", restaurants_path, class:"btn btn-primary btn-sm rounded" %>

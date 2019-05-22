@@ -1,0 +1,7 @@
+<h1>All Restaurants</h1>
+
+<% @restaurants.each do |restaurant| %>
+  <p><%= link_to restaurant.name, restaurant_path(restaurant) %>, <%= restaurant.category.capitalize %></p>
+<% end %>
+
+<%= link_to "Add a new Restaurant", new_restaurant_path, class:"btn btn-primary rounded" %>
